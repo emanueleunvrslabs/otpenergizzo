@@ -16,7 +16,6 @@ export const EnergizzoCard = () => {
             border: '1px solid hsl(158 64% 42% / 0.25)',
           }}
         >
-          {/* Decorative glow */}
           <div
             className="absolute inset-0 opacity-60"
             style={{
@@ -25,12 +24,10 @@ export const EnergizzoCard = () => {
           />
 
           <div className="relative z-10">
-            {/* Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full liquid-glass text-sm text-primary font-medium mb-6"
             >
               <Zap className="w-4 h-4" />
@@ -42,9 +39,8 @@ export const EnergizzoCard = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
             >
-              Dispacciamento è un servizio offerto da{" "}
+              OTP Service è un servizio{" "}
               <span className="gradient-text">Energizzo</span>
             </motion.h2>
 
@@ -53,10 +49,9 @@ export const EnergizzoCard = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.25 }}
             >
-              I clienti Energizzo hanno la gestione del dispacciamento già integrata nel software. 
-              Analisi, ottimizzazione e monitoraggio, tutto in un'unica piattaforma.
+              Un'azienda italiana che fornisce software e hardware da più di 20 anni.
+              Crediamo nelle cose semplici, trasparenti e di facile utilizzo.
             </motion.p>
 
             <motion.a
@@ -69,7 +64,6 @@ export const EnergizzoCard = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
             >
               Scopri Energizzo
               <ArrowRight className="w-5 h-5" />

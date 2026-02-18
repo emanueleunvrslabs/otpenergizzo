@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowRight, Shield, BarChart3, Clock, TrendingDown, Zap, ChevronRight } from "lucide-react";
+import { ArrowRight, FileSignature, Shield, Users } from "lucide-react";
 
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen pt-32 pb-24 md:py-24">
-          {/* Left Side - Text Content */}
+          {/* Left Side */}
           <div className="text-left">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -15,51 +14,49 @@ export const HeroSection = () => {
               transition={{ duration: 0.7 }}
               className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] mb-6"
             >
-              <span className="text-foreground">IL DISPACCIAMENTO</span>
+              <span className="text-foreground">Firma Elettronica</span>
               <br />
-              <span className="gradient-text">INTELLIGENTE</span>
+              <span className="text-foreground">per aziende,</span>
+              <br />
+              <span className="gradient-text">senza abbonamento</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="text-muted-foreground text-lg md:text-xl max-w-xl mb-6 leading-relaxed"
+              className="text-muted-foreground text-lg md:text-xl max-w-xl mb-8 leading-relaxed"
             >
-              Il dispacciamento è il servizio che garantisce l'equilibrio tra domanda e offerta 
-              di energia elettrica sulla rete nazionale. Gestito da Terna, coordina in tempo reale 
-              la produzione, il trasporto e la distribuzione dell'energia, assicurando che ogni kilowattora 
-              acquistato arrivi dove serve, quando serve.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.25 }}
-              className="text-muted-foreground text-base max-w-xl mb-8 leading-relaxed"
-            >
-              Ottimizzare i costi di dispacciamento significa ridurre gli oneri in bolletta 
-              legati a sbilanciamenti, uplift e corrispettivi di sistema — voci spesso trascurate 
-              che incidono significativamente sul costo finale dell'energia per gli operatori.
+              Fai firmare i documenti della tua azienda in modo semplice, veloce e con valore legale.{" "}
+              <span className="text-foreground font-semibold">Senza abbonamento e vincoli.</span>
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.35 }}
-              className="flex flex-col sm:flex-row items-start gap-4 mb-8"
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="flex flex-col sm:flex-row items-start gap-4 mb-4"
             >
-              <Link to="/dispacciamento">
+              <a href="https://app.otpservice.io/sign-up?locale=it" target="_blank" rel="noopener noreferrer">
                 <motion.span
                   className="px-8 py-4 bg-gradient-to-r from-primary to-emerald-500 text-primary-foreground font-semibold rounded-full transition-all duration-300 shadow-lg shadow-primary/30 flex items-center gap-2 inline-flex"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Scopri di più
+                  Attiva la prova gratuita
                   <ArrowRight className="w-5 h-5" />
                 </motion.span>
-              </Link>
+              </a>
             </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="text-muted-foreground text-sm italic mb-8"
+            >
+              Attivazione istantanea, non richiede carta di credito.
+            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -68,21 +65,21 @@ export const HeroSection = () => {
               className="flex flex-wrap items-center gap-3"
             >
               <span className="flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-sm text-muted-foreground">
-                <BarChart3 className="w-4 h-4 text-primary" />
-                Analisi Sbilanciamenti
+                <FileSignature className="w-4 h-4 text-primary" />
+                Firma Semplice & Avanzata
               </span>
               <span className="flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-sm text-muted-foreground">
-                <Clock className="w-4 h-4 text-primary" />
-                Monitoraggio Real-time
+                <Users className="w-4 h-4 text-primary" />
+                Utenti Illimitati
               </span>
               <span className="flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-sm text-muted-foreground">
                 <Shield className="w-4 h-4 text-primary" />
-                ARERA Compliant
+                Valore Legale
               </span>
             </motion.div>
           </div>
 
-          {/* Right Side - Liquid Glass Card */}
+          {/* Right Side - Glass Card */}
           <motion.div
             initial={{ opacity: 0, x: 60, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -100,7 +97,6 @@ export const HeroSection = () => {
                   boxShadow: '0 32px 64px -12px hsl(220 30% 10% / 0.4), inset 0 1px 0 0 hsl(0 0% 100% / 0.15)',
                 }}
               >
-                {/* Animated border glow */}
                 <motion.div
                   className="absolute top-0 left-0 w-32 h-32 pointer-events-none"
                   style={{
@@ -116,94 +112,56 @@ export const HeroSection = () => {
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 />
 
-                {/* Glass shine */}
-                <div
-                  className="absolute inset-0 pointer-events-none rounded-[2rem]"
-                  style={{
-                    background: 'linear-gradient(135deg, hsl(0 0% 100% / 0.08) 0%, transparent 60%)',
-                  }}
-                />
-
-                {/* Logo */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.7 }}
-                  className="text-center mb-4 relative z-10"
-                >
-                  <span className="text-lg font-semibold text-foreground/90">Dispacciamento</span>
-                </motion.div>
-
-                {/* Main stat */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  className="text-center mb-8 relative z-10"
-                >
-                  <div className="relative inline-block">
-                    <motion.div
-                      className="absolute inset-0 rounded-2xl bg-primary/20 blur-2xl"
-                      animate={{ opacity: [0.3, 0.6, 0.3], scale: [0.9, 1.1, 0.9] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    />
-                    <p className="relative text-5xl md:text-6xl font-extrabold text-foreground tracking-tight">
-                      -18%
-                    </p>
+                <div className="relative z-10 space-y-6">
+                  <div className="text-center">
+                    <span className="text-lg font-semibold text-foreground/90">OTP Service</span>
                   </div>
-                  <p className="text-sm text-muted-foreground mt-2">Riduzione costi medi di dispacciamento</p>
-                </motion.div>
 
-                {/* Info rows */}
-                <div className="space-y-3 relative z-10">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1 }}
-                    className="flex items-center gap-4 p-4 rounded-2xl"
-                    style={{
-                      background: 'linear-gradient(135deg, hsl(0 0% 100% / 0.95) 0%, hsl(0 0% 100% / 0.9) 100%)',
-                      boxShadow: '0 4px 24px -4px hsl(220 30% 10% / 0.15)',
-                      border: '1px solid hsl(0 0% 90% / 0.8)',
-                    }}
-                  >
-                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0">
-                      <TrendingDown className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-slate-900 text-sm">Sbilanciamenti</p>
-                      <p className="text-sm text-slate-500">
-                        Ottimizzazione <span className="text-emerald-600 font-semibold">automatica</span>
+                  {/* Pricing highlight */}
+                  <div className="text-center">
+                    <p className="text-sm text-muted-foreground mb-1">Firma Semplice da</p>
+                    <div className="relative inline-block">
+                      <motion.div
+                        className="absolute inset-0 rounded-2xl bg-primary/20 blur-2xl"
+                        animate={{ opacity: [0.3, 0.6, 0.3], scale: [0.9, 1.1, 0.9] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      />
+                      <p className="relative text-5xl md:text-6xl font-extrabold text-foreground tracking-tight">
+                        €0,90
                       </p>
                     </div>
-                    <ChevronRight className="w-5 h-5 text-slate-400 flex-shrink-0" />
-                  </motion.div>
+                    <p className="text-sm text-muted-foreground mt-2">per documento · firmatari illimitati</p>
+                  </div>
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 1.15 }}
-                    className="flex items-center gap-4 p-4 rounded-2xl"
-                    style={{
-                      background: 'linear-gradient(135deg, hsl(0 0% 100% / 0.95) 0%, hsl(0 0% 100% / 0.9) 100%)',
-                      boxShadow: '0 4px 24px -4px hsl(220 30% 10% / 0.15)',
-                      border: '1px solid hsl(0 0% 90% / 0.8)',
-                    }}
-                  >
-                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary to-emerald-600 flex items-center justify-center flex-shrink-0">
-                      <Zap className="w-5 h-5 text-white" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-slate-900 text-sm">Uplift & Corrispettivi</p>
-                      <p className="text-sm text-slate-500">
-                        Monitoraggio <span className="font-semibold text-slate-900">real-time</span>
-                      </p>
-                    </div>
-                    <ChevronRight className="w-5 h-5 text-slate-400 flex-shrink-0" />
-                  </motion.div>
+                  {/* Features */}
+                  <div className="space-y-3">
+                    {[
+                      { label: "Nessun abbonamento", sub: "Paghi solo a consumo" },
+                      { label: "API gratuite", sub: "Integra con i tuoi gestionali" },
+                      { label: "Utenti illimitati", sub: "Credito centralizzato" },
+                    ].map((item, i) => (
+                      <motion.div
+                        key={item.label}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 1 + i * 0.15 }}
+                        className="flex items-center gap-4 p-3 rounded-2xl"
+                        style={{
+                          background: 'linear-gradient(135deg, hsl(0 0% 100% / 0.95) 0%, hsl(0 0% 100% / 0.9) 100%)',
+                          boxShadow: '0 4px 24px -4px hsl(220 30% 10% / 0.15)',
+                          border: '1px solid hsl(0 0% 90% / 0.8)',
+                        }}
+                      >
+                        <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                        <div>
+                          <p className="font-semibold text-slate-900 text-sm">{item.label}</p>
+                          <p className="text-xs text-slate-500">{item.sub}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               </div>
-
             </motion.div>
           </motion.div>
         </div>
