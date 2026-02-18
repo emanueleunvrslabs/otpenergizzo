@@ -1,18 +1,14 @@
 export const Footer = () => {
   return (
-    <footer className="relative py-6 px-4 overflow-hidden">
+    <footer className="relative py-8 px-4 overflow-hidden">
       <div className="container mx-auto relative z-10">
-        <div className="liquid-glass rounded-full px-6 py-3 flex flex-wrap items-center justify-center gap-x-2 text-sm text-muted-foreground">
-          <span>
-            <span className="text-primary font-semibold">OTP by Energizzo</span>
-            {" — un servizio "}
-            <span className="text-primary italic">UNVRS Labs</span>
-            {" by UNVRS Labs"}
-          </span>
-          <span className="hidden sm:inline">|</span>
-          <span>© {new Date().getFullYear()} UNVRS Labs Limited</span>
-          <span className="hidden sm:inline">|</span>
-          <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
+        <div className="liquid-glass rounded-2xl px-6 py-6 flex flex-col items-center justify-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2">
+            <span className="text-primary font-bold">energizzo</span>
+            <span>|</span>
+            <span>by <span className="font-semibold">UNVRS Labs</span></span>
+          </div>
+          <span>© {new Date().getFullYear()} UNVRS Labs S.r.l. — Tutti i diritti riservati</span>
         </div>
       </div>
     </footer>
