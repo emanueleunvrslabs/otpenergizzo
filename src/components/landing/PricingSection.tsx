@@ -1,211 +1,125 @@
 import { motion } from "framer-motion";
-import { Check, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-const plans = [
-  {
-    name: "Domestico",
-    description: "Per famiglie e privati - Attivazione esclusiva tramite App",
-    price: "App",
-    period: "Scarica",
-    features: [
-      "Registrazione veloce con foto bolletta",
-      "AI che legge i dati automaticamente",
-      "Proposta tariffa migliore istantanea",
-      "Dati anagrafici precompilati",
-      "Energia 100% rinnovabile",
-      "Gestione completa da smartphone"
-    ],
-    cta: "Scarica l'App",
-    highlighted: true,
-    badge: "Solo App"
-  },
-  {
-    name: "Business",
-    description: "Per aziende e partite IVA",
-    price: "Custom",
-    period: "",
-    features: [
-      "Tariffe personalizzate",
-      "Consulente dedicato",
-      "Fatturazione elettronica",
-      "Report consumi dettagliati",
-      "Supporto prioritario",
-      "Pagamento a 30/60 giorni",
-      "Soluzioni multi-punto"
-    ],
-    cta: "Richiedi Preventivo",
-    highlighted: false
-  },
-  {
-    name: "Pubblica Amministrazione",
-    description: "Per enti pubblici e PA",
-    price: "Gara",
-    period: "",
-    features: [
-      "Procedure MEPA/Consip",
-      "Conformità normativa completa",
-      "Account manager dedicato",
-      "Rendicontazione trasparente",
-      "Energia verde certificata",
-      "Fatturazione split payment",
-      "Supporto gare d'appalto"
-    ],
-    cta: "Contattaci",
-    highlighted: false
-  }
+const prices = [
+  { label: "Firma elettronica semplice (FS)", price: "€ 0,90", note: "punti firma e firmatari illimitati" },
+  { label: "Firma elettronica avanzata (FEA)", price: "€ 1,40", note: "punti firma e firmatari illimitati" },
+  { label: "OTP via SMS", price: "€ 0,08", note: "" },
+  { label: "OTP via E-mail", price: "Gratis", note: "", highlight: true },
+  { label: "Utenze aggiuntive", price: "Gratis ⚡️", note: "", highlight: true },
+  { label: "Utilizzo API", price: "Gratis ⚡️", note: "", highlight: true },
+  { label: "Disponibilità documento firmato per 1 anno", price: "Gratis", note: "in PROMOZIONE ⚡️", highlight: true },
+  { label: "Conservazione digitale a norma del file di prova", price: "€ 0,20", note: "opzionale, per FEA obbligatorio 20 anni" },
+  { label: "Conservazione digitale a norma file di prova + documento", price: "€ 0,50", note: "opzionale" },
+];
+
+const tiers = [
+  { ricarica: "€ 25", omaggio: "-", costo: "€ 0,90", sconto: "-" },
+  { ricarica: "€ 50", omaggio: "€ 3", costo: "€ 0,86", sconto: "-6%" },
+  { ricarica: "€ 100", omaggio: "€ 10", costo: "€ 0,82", sconto: "-10%" },
+  { ricarica: "€ 250", omaggio: "€ 38", costo: "€ 0,78", sconto: "-15%" },
+  { ricarica: "€ 500", omaggio: "€ 125", costo: "€ 0,72", sconto: "-25%" },
+  { ricarica: "€ 1.000", omaggio: "€ 300", costo: "€ 0,69", sconto: "-30%" },
+  { ricarica: "€ 2.500", omaggio: "€ 875", costo: "€ 0,67", sconto: "-35%" },
+  { ricarica: "€ 5.000", omaggio: "€ 2.250", costo: "€ 0,62", sconto: "-45%" },
+  { ricarica: "€ 10.000", omaggio: "€ 5.500", costo: "€ 0,58", sconto: "-55%" },
 ];
 
 export const PricingSection = () => {
   return (
-    <section id="pricing" className="py-32 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Section Header */}
+    <section className="relative py-24 px-4">
+      <div className="container mx-auto max-w-5xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <span className="gradient-text">Tariffe</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Prezzi chiari e trasparenti. Per documento, con punti firma e firmatari illimitati.
+            Sconti fino al 55% in base al taglio di ricarica.
+          </p>
+        </motion.div>
+
+        {/* Price list */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="liquid-glass-card p-6 md:p-8 mb-12"
         >
-          <motion.span 
-            className="inline-block px-5 py-2 rounded-full liquid-glass text-primary text-sm font-semibold mb-6"
-            whileHover={{ scale: 1.05 }}
-          >
-            Prezzi Trasparenti
-          </motion.span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Scegli l'offerta
-            <br />
-            <span className="gradient-text-gold">giusta per te</span>
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Offerte chiare e trasparenti per casa e azienda. Nessun costo nascosto, solo risparmio.
-          </p>
+          <div className="space-y-0 divide-y divide-border">
+            {prices.map((item) => (
+              <div key={item.label} className="flex items-center justify-between py-4 gap-4">
+                <div>
+                  <p className="text-foreground font-medium text-sm">{item.label}</p>
+                  {item.note && <p className="text-muted-foreground text-xs mt-0.5">{item.note}</p>}
+                </div>
+                <span className={`text-sm font-bold whitespace-nowrap ${item.highlight ? "text-primary" : "text-foreground"}`}>
+                  {item.price}
+                </span>
+              </div>
+            ))}
+          </div>
+          <p className="text-muted-foreground text-xs mt-4 italic">Prezzi IVA esclusa, ricarica minima 25€.</p>
         </motion.div>
 
-        {/* Pricing Cards - Liquid Glass */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
-          {plans.map((plan, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative ${plan.highlighted ? 'lg:-mt-4 lg:mb-4' : ''}`}
-            >
-              {/* Popular badge */}
-              {plan.highlighted && (
-                <motion.div 
-                  className="absolute -top-4 left-1/2 -translate-x-1/2 z-10"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 }}
-                >
-                  <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary to-emerald-500 text-primary-foreground text-sm font-semibold shadow-lg shadow-primary/25">
-                    <Sparkles className="w-4 h-4" />
-                    Solo via App
-                  </div>
-                </motion.div>
-              )}
-              
-              <motion.div 
-                className={`
-                  relative h-full rounded-[2rem] p-8 flex flex-col
-                  transition-all duration-500 overflow-hidden
-                  ${plan.highlighted 
-                    ? 'liquid-glass border-primary/30' 
-                    : 'liquid-glass-card'
-                  }
-                `}
-                whileHover={{ y: -4 }}
-                style={{
-                  background: plan.highlighted 
-                    ? 'linear-gradient(135deg, hsl(158 64% 42% / 0.12) 0%, hsl(0 0% 100% / 0.08) 50%, hsl(0 0% 100% / 0.04) 100%)'
-                    : 'linear-gradient(135deg, hsl(0 0% 100% / 0.08) 0%, hsl(0 0% 100% / 0.03) 100%)',
-                  border: plan.highlighted 
-                    ? '1px solid hsl(158 64% 42% / 0.3)' 
-                    : '1px solid hsl(0 0% 100% / 0.12)'
-                }}
-              >
-                {/* Glow effect for highlighted */}
-                {plan.highlighted && (
-                  <div 
-                    className="absolute inset-0 rounded-[2rem] opacity-40"
-                    style={{
-                      background: 'radial-gradient(ellipse at 50% 0%, hsl(158 64% 42% / 0.15) 0%, transparent 60%)'
-                    }}
-                  />
-                )}
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  {/* Plan Info */}
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
-                    <p className="text-muted-foreground text-sm">{plan.description}</p>
-                  </div>
-
-                  {/* Price */}
-                  <div className="mb-8">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-5xl font-bold text-foreground">{plan.price}</span>
-                      <span className="text-muted-foreground text-lg">{plan.period}</span>
-                    </div>
-                  </div>
-
-                  {/* Features */}
-                  <ul className="space-y-4 mb-8 flex-grow">
-                    {plan.features.map((feature, featureIndex) => (
-                      <motion.li 
-                        key={featureIndex}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 + featureIndex * 0.05 }}
-                        className="flex items-start gap-3"
-                      >
-                        <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${plan.highlighted ? 'bg-primary/25' : 'bg-white/10'}`}>
-                          <Check className={`w-3 h-3 ${plan.highlighted ? 'text-primary' : 'text-foreground/70'}`} />
-                        </div>
-                        <span className="text-foreground/80">{feature}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-
-                  {/* CTA */}
-                  <motion.a
-                    href="#contact"
-                    className={`
-                      w-full py-4 px-6 rounded-[1rem] font-semibold text-center 
-                      transition-all duration-300 flex items-center justify-center gap-2
-                      ${plan.highlighted
-                        ? 'bg-gradient-to-r from-primary to-amber-500 text-primary-foreground shadow-lg shadow-primary/25'
-                        : 'liquid-glass text-foreground hover:bg-white/15'
-                      }
-                    `}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    {plan.cta}
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.a>
-                </div>
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Trust text */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+        {/* Tiers table */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-12 text-muted-foreground"
         >
-          ⚡ Attivazione gratuita · 🌱 100% Energia verde · 🔒 Nessun vincolo
-        </motion.p>
+          <h3 className="text-2xl font-bold text-foreground text-center mb-2">Più ricarichi, più risparmi</h3>
+          <p className="text-muted-foreground text-center text-sm mb-8">Il credito dura 3 anni e la scadenza si rinnova ad ogni ricarica.</p>
+
+          <div className="liquid-glass-card overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-4 text-muted-foreground font-medium">Ricarica</th>
+                    <th className="text-left p-4 text-muted-foreground font-medium">Credito omaggio</th>
+                    <th className="text-left p-4 text-muted-foreground font-medium">Costo FS</th>
+                    <th className="text-left p-4 text-muted-foreground font-medium">Sconto</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tiers.map((tier) => (
+                    <tr key={tier.ricarica} className="border-b border-border/50 last:border-0">
+                      <td className="p-4 text-foreground font-medium">{tier.ricarica}</td>
+                      <td className="p-4 text-muted-foreground">{tier.omaggio}</td>
+                      <td className="p-4 text-foreground">{tier.costo}/firma</td>
+                      <td className="p-4 text-primary font-bold">{tier.sconto}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <a href="https://app.otpservice.io/sign-up?locale=it" target="_blank" rel="noopener noreferrer">
+            <motion.span
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-emerald-500 text-primary-foreground font-semibold rounded-full shadow-lg shadow-primary/30"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Attiva la prova gratuita
+              <ArrowRight className="w-5 h-5" />
+            </motion.span>
+          </a>
+        </motion.div>
       </div>
     </section>
   );

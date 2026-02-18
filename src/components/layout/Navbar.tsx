@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { label: "Home", to: "/" },
-  { label: "Dispacciamento", to: "/dispacciamento" },
+  { label: "OTP", to: "/otp" },
 ];
 
 export const Navbar = () => {
@@ -40,7 +40,7 @@ export const Navbar = () => {
       >
         {/* Logo */}
         <Link to="/" className="pr-4 pl-2 flex items-center gap-2">
-          <span className="text-lg font-bold text-primary">Dispacciamento</span>
+          <span className="text-lg font-bold text-primary">OTP</span>
           <span className="text-sm text-muted-foreground font-medium">by energizzo</span>
         </Link>
 
