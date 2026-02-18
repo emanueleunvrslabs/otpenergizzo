@@ -9,7 +9,7 @@ import {
 const faqs = [
   {
     question: "Che tipo di firma offrite?",
-    answer: "Offriamo la Firma Elettronica Semplice (FES) con verifica OTP via email o SMS. Perfetta per il mercato energetico, è ideale per far firmare contratti di energia e gas in modo semplice, veloce e con pieno valore legale.",
+    answer: "Offriamo la Firma Elettronica Semplice (FES) con verifica OTP via WhatsApp. Perfetta per il mercato energetico, è ideale per far firmare contratti di energia e gas in modo semplice, veloce e con pieno valore legale.",
   },
   {
     question: "È possibile collegare il servizio via API?",

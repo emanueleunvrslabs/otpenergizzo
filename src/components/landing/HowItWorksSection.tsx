@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 
 const senderSteps = [
-  "Scegli il tipo di firma (semplice o avanzata)",
-  "Carica il file del documento da firmare",
+  "Carica il file del contratto da firmare",
   "Inserisci i dati delle persone alle quali è richiesta la firma",
   "Inserisci i punti firma nel documento",
 ];
@@ -10,7 +9,7 @@ const senderSteps = [
 const signerSteps = [
   "Il firmatario riceve il link via email con il documento da firmare",
   "Accetta i punti firma apponendo una semplice spunta",
-  "Conferma tramite OTP: un codice inviato via email o SMS",
+  "Conferma tramite OTP: un codice inviato su WhatsApp",
   "Riceve il PDF firmato e un codice per controllare i dettagli della firma",
 ];
 
