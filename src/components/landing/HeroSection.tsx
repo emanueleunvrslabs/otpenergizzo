@@ -16,8 +16,7 @@ export const HeroSection = () => {
             >
               <span className="text-foreground">Firma Elettronica</span>
               <br />
-              <span className="text-foreground">per aziende,</span>
-              <br />
+              <span className="text-foreground">per aziende, </span>
               <span className="gradient-text">senza abbonamento</span>
             </motion.h1>
 
