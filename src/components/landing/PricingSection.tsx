@@ -3,10 +3,10 @@ import { ArrowRight } from "lucide-react";
 
 const prices = [
   { label: "Firma elettronica semplice (FES)", price: "€ 1,00", note: "punti firma e firmatari illimitati" },
-  { label: "OTP via WhatsApp", price: "Incluso", note: "", highlight: true },
-  { label: "Utenze aggiuntive", price: "Gratis ⚡️", note: "", highlight: true },
-  { label: "Utilizzo API", price: "Gratis ⚡️", note: "", highlight: true },
-  { label: "Disponibilità documento firmato per 1 anno", price: "Gratis", note: "in PROMOZIONE ⚡️", highlight: true },
+  { label: "OTP via WhatsApp", price: "Incluso", highlight: true },
+  { label: "⚡️ Utenze aggiuntive", price: "Gratis", highlight: true },
+  { label: "⚡️ Utilizzo API", price: "Gratis", highlight: true },
+  { label: "⚡️ Disponibilità documento firmato per 1 anno", price: "Gratis", note: "in PROMOZIONE", highlight: true },
   { label: "Conservazione digitale a norma del file di prova", price: "€ 0,20", note: "opzionale, per FEA obbligatorio 20 anni" },
   { label: "Conservazione digitale a norma file di prova + documento", price: "€ 0,50", note: "opzionale" },
 ];
