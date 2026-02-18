@@ -3,8 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const prices = [
   { label: "Firma elettronica semplice (FES)", price: "€ 1,00", note: "punti firma e firmatari illimitati" },
-  { label: "OTP via SMS", price: "€ 0,08", note: "" },
-  { label: "OTP via E-mail", price: "Gratis", note: "", highlight: true },
+  { label: "OTP via WhatsApp", price: "Incluso", note: "", highlight: true },
   { label: "Utenze aggiuntive", price: "Gratis ⚡️", note: "", highlight: true },
   { label: "Utilizzo API", price: "Gratis ⚡️", note: "", highlight: true },
   { label: "Disponibilità documento firmato per 1 anno", price: "Gratis", note: "in PROMOZIONE ⚡️", highlight: true },
