@@ -39,9 +39,9 @@ export const Navbar = () => {
         }}
       >
         {/* Logo */}
-        <Link to="/" className="pr-4 pl-2 flex items-baseline gap-1.5">
-          <span className="text-lg font-extrabold text-primary tracking-tight">OTP</span>
-          <span className="text-sm text-foreground/80 font-medium">by energizzo</span>
+        <Link to="/" className="pr-4 pl-2 flex items-center gap-2">
+          <span className="text-lg font-bold text-primary">OTP</span>
+          <span className="text-sm text-muted-foreground font-medium">by energizzo</span>
         </Link>
 
         <div className="w-px h-5 bg-white/15 mx-1" />
