@@ -127,7 +127,7 @@ export const HeroSection = () => {
                         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                       />
                       <p className="relative text-5xl md:text-6xl font-extrabold text-foreground tracking-tight">
-                        €0,90
+                        €1,00
                       </p>
                     </div>
                     <p className="text-sm text-muted-foreground mt-2">per documento · firmatari illimitati</p>

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const prices = [
-  { label: "Firma elettronica semplice (FS)", price: "€ 0,90", note: "punti firma e firmatari illimitati" },
+  { label: "Firma elettronica semplice (FS)", price: "€ 1,00", note: "punti firma e firmatari illimitati" },
   { label: "Firma elettronica avanzata (FEA)", price: "€ 1,40", note: "punti firma e firmatari illimitati" },
   { label: "OTP via SMS", price: "€ 0,08", note: "" },
   { label: "OTP via E-mail", price: "Gratis", note: "", highlight: true },
@@ -14,7 +14,7 @@ const prices = [
 ];
 
 const tiers = [
-  { ricarica: "€ 25", omaggio: "-", costo: "€ 0,90", sconto: "-" },
+  { ricarica: "€ 25", omaggio: "-", costo: "€ 1,00", sconto: "-" },
   { ricarica: "€ 50", omaggio: "€ 3", costo: "€ 0,86", sconto: "-6%" },
   { ricarica: "€ 100", omaggio: "€ 10", costo: "€ 0,82", sconto: "-10%" },
   { ricarica: "€ 250", omaggio: "€ 38", costo: "€ 0,78", sconto: "-15%" },
