@@ -16,7 +16,9 @@ const Index = () => {
       <div className="grain-overlay" />
 
       <div className="relative z-10">
-        <Navbar />
+        <header>
+          <Navbar />
+        </header>
         <main>
           <HeroSection />
           <ServicesSection />

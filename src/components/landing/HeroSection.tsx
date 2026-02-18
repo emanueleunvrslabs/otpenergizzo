@@ -3,7 +3,7 @@ import { ArrowRight, FileSignature, Shield, Users } from "lucide-react";
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="hero" aria-label="Firma Elettronica Semplice OTP" className="relative min-h-screen flex items-center overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen pt-32 pb-24 md:py-24">
           {/* Left Side */}

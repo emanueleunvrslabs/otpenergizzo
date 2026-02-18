@@ -14,7 +14,7 @@ const prices = [
 
 export const PricingSection = () => {
   return (
-    <section className="relative py-24 px-4">
+    <section id="tariffe" aria-label="Tariffe firma elettronica" className="relative py-24 px-4">
       <div className="container mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

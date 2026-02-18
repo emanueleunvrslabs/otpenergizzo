@@ -26,7 +26,7 @@ const reasons = [
 
 export const WhyChooseSection = () => {
   return (
-    <section className="relative py-24 px-4">
+    <section id="perche-sceglierci" aria-label="Perché scegliere OTP by Energizzo" className="relative py-24 px-4">
       <div className="container mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
