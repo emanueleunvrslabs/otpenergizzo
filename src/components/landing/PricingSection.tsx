@@ -51,9 +51,9 @@ export const PricingSection = () => {
         >
           <div className="space-y-0 divide-y divide-border">
             {prices.map((item) => (
-              <div key={item.label} className="flex items-center justify-between py-4 gap-4">
-                <div>
-                  <p className="text-foreground font-medium text-sm">{item.label}</p>
+              <div key={item.label} className="flex flex-col sm:flex-row sm:items-center justify-between py-4 gap-1 sm:gap-4">
+                <div className="min-w-0">
+                  <p className="text-foreground font-medium text-xs sm:text-sm">{item.label}</p>
                   {item.note && <p className="text-muted-foreground text-xs mt-0.5">{item.note}</p>}
                 </div>
                 <span className={`text-sm font-bold whitespace-nowrap ${item.highlight ? "text-primary" : "text-foreground"}`}>
@@ -74,29 +74,52 @@ export const PricingSection = () => {
           <h3 className="text-2xl font-bold text-foreground text-center mb-2">Più ricarichi, più risparmi</h3>
           <p className="text-muted-foreground text-center text-sm mb-8">Il credito dura 3 anni e la scadenza si rinnova ad ogni ricarica.</p>
 
-          <div className="liquid-glass-card overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-border">
-                    <th className="text-left p-4 text-muted-foreground font-medium">Ricarica</th>
-                    <th className="text-left p-4 text-muted-foreground font-medium">Credito omaggio</th>
-                    <th className="text-left p-4 text-muted-foreground font-medium">Costo FS</th>
-                    <th className="text-left p-4 text-muted-foreground font-medium">Sconto</th>
+          {/* Desktop table */}
+          <div className="liquid-glass-card overflow-hidden hidden md:block">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="text-left p-4 text-muted-foreground font-medium">Ricarica</th>
+                  <th className="text-left p-4 text-muted-foreground font-medium">Credito omaggio</th>
+                  <th className="text-left p-4 text-muted-foreground font-medium">Costo FES</th>
+                  <th className="text-left p-4 text-muted-foreground font-medium">Sconto</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tiers.map((tier) => (
+                  <tr key={tier.ricarica} className="border-b border-border/50 last:border-0">
+                    <td className="p-4 text-foreground font-medium">{tier.ricarica}</td>
+                    <td className="p-4 text-muted-foreground">{tier.omaggio}</td>
+                    <td className="p-4 text-foreground">{tier.costo}/firma</td>
+                    <td className="p-4 text-primary font-bold">{tier.sconto}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {tiers.map((tier) => (
-                    <tr key={tier.ricarica} className="border-b border-border/50 last:border-0">
-                      <td className="p-4 text-foreground font-medium">{tier.ricarica}</td>
-                      <td className="p-4 text-muted-foreground">{tier.omaggio}</td>
-                      <td className="p-4 text-foreground">{tier.costo}/firma</td>
-                      <td className="p-4 text-primary font-bold">{tier.sconto}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Mobile cards */}
+          <div className="md:hidden space-y-3">
+            {tiers.map((tier) => (
+              <div key={tier.ricarica} className="liquid-glass-card-sm p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-foreground font-bold text-base">Ricarica {tier.ricarica}</span>
+                  {tier.sconto !== "-" && (
+                    <span className="text-primary font-bold text-sm bg-primary/10 px-2 py-0.5 rounded-full">{tier.sconto}</span>
+                  )}
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  <div>
+                    <p className="text-muted-foreground text-xs">Credito omaggio</p>
+                    <p className="text-foreground font-medium">{tier.omaggio}</p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground text-xs">Costo FES</p>
+                    <p className="text-foreground font-medium">{tier.costo}/firma</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </motion.div>
 
