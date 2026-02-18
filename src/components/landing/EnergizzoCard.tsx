@@ -40,7 +40,7 @@ export const EnergizzoCard = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              OTP Service è un servizio{" "}
+              OTP by Energizzo è un servizio{" "}
               <span className="gradient-text">Energizzo</span>
             </motion.h2>
 
