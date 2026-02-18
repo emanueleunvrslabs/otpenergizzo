@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const prices = [
-  { label: "Firma elettronica semplice (FS)", price: "€ 1,00", note: "punti firma e firmatari illimitati" },
-  { label: "Firma elettronica avanzata (FEA)", price: "€ 1,40", note: "punti firma e firmatari illimitati" },
+  { label: "Firma elettronica semplice (FES)", price: "€ 1,00", note: "punti firma e firmatari illimitati" },
   { label: "OTP via SMS", price: "€ 0,08", note: "" },
   { label: "OTP via E-mail", price: "Gratis", note: "", highlight: true },
   { label: "Utenze aggiuntive", price: "Gratis ⚡️", note: "", highlight: true },

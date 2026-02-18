@@ -8,8 +8,8 @@ import {
 
 const faqs = [
   {
-    question: "Quali tipologie di firma avete?",
-    answer: "Abbiamo 2 tipologie: Firma elettronica semplice (FS), perfetta per le necessità più comuni con OTP via email o SMS, e Firma elettronica avanzata (FEA), ideale per casi che richiedono un maggiore valore probatorio con identificazione del firmatario.",
+    question: "Che tipo di firma offrite?",
+    answer: "Offriamo la Firma Elettronica Semplice (FES) con verifica OTP via email o SMS. Perfetta per il mercato energetico, è ideale per far firmare contratti di energia e gas in modo semplice, veloce e con pieno valore legale.",
   },
   {
     question: "È possibile collegare il servizio via API?",
@@ -25,11 +25,7 @@ const faqs = [
   },
   {
     question: "Cos'è la Firma Elettronica Semplice?",
-    answer: "La FS è una modalità di firma da remoto semplice da utilizzare e legalmente riconosciuta in Italia e in Europa. Noi di OTP Service l'abbiamo potenziata con un registro eventi completo e autenticazione OTP per il massimo valore probatorio.",
-  },
-  {
-    question: "Cos'è la Firma Elettronica Avanzata?",
-    answer: "La FEA è simile alla FS ma richiede il riconoscimento del firmatario, effettuabile di persona o da remoto. È obbligatoria la conservazione digitale a norma del file di prova e la copertura assicurativa.",
+    answer: "La FES è una modalità di firma da remoto semplice da utilizzare e legalmente riconosciuta in Italia e in Europa. Perfetta per il settore energetico, permette di far firmare contratti di energia e gas con autenticazione OTP per il massimo valore probatorio.",
   },
   {
     question: "Il costo varia in base al numero delle utenze?",
