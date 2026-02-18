@@ -35,7 +35,7 @@ export const WhyChooseSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Perché scegliere <span className="gradient-text">OTP Service?</span>
+            Perché scegliere <span className="gradient-text">OTP by Energizzo?</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Crediamo nelle cose semplici, trasparenti e di facile utilizzo. Siamo un'azienda italiana che opera sul territorio da più di 20 anni.

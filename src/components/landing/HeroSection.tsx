@@ -118,7 +118,7 @@ export const HeroSection = () => {
 
                 <div className="relative z-10 space-y-6">
                   <div className="text-center">
-                    <span className="text-lg font-semibold text-foreground/90">OTP Service</span>
+                    <span className="text-lg font-semibold text-foreground/90">OTP by Energizzo</span>
                   </div>
 
                   {/* Pricing highlight */}

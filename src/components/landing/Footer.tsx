@@ -4,9 +4,9 @@ export const Footer = () => {
       <div className="container mx-auto relative z-10">
         <div className="liquid-glass rounded-full px-6 py-3 flex flex-wrap items-center justify-center gap-x-2 text-sm text-muted-foreground">
           <span>
-            <span className="text-primary font-semibold">OTP Service</span>
+            <span className="text-primary font-semibold">OTP by Energizzo</span>
             {" — un servizio "}
-            <span className="text-primary italic">energizzo</span>
+            <span className="text-primary italic">UNVRS Labs</span>
             {" by UNVRS Labs"}
           </span>
           <span className="hidden sm:inline">|</span>
