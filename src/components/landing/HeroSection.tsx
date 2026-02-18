@@ -66,7 +66,11 @@ export const HeroSection = () => {
             >
               <span className="flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-sm text-muted-foreground">
                 <FileSignature className="w-4 h-4 text-primary" />
-                Firma Semplice & Avanzata
+                Firma Elettronica Semplice
+              </span>
+              <span className="flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-sm text-muted-foreground">
+                <Users className="w-4 h-4 text-primary" />
+                Mercato Energetico
               </span>
               <span className="flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-sm text-muted-foreground">
                 <Users className="w-4 h-4 text-primary" />
@@ -119,7 +123,7 @@ export const HeroSection = () => {
 
                   {/* Pricing highlight */}
                   <div className="text-center">
-                    <p className="text-sm text-muted-foreground mb-1">Firma Semplice da</p>
+                    <p className="text-sm text-muted-foreground mb-1">Firma Elettronica Semplice da</p>
                     <div className="relative inline-block">
                       <motion.div
                         className="absolute inset-0 rounded-2xl bg-primary/20 blur-2xl"

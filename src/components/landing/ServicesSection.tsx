@@ -33,8 +33,8 @@ export const ServicesSection = () => {
             I <span className="gradient-text">servizi</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Firma Elettronica Semplice (FS), Firma Elettronica Avanzata (FEA) e conservazione digitale a norma.
-            Prezzi trasparenti, senza abbonamento e con sconti fino al 55%.
+            Firma Elettronica Semplice (FES) con verifica OTP, perfetta per il mercato energetico.
+            Ideale per far firmare contratti di energia e gas in modo semplice, veloce e con valore legale.
           </p>
         </motion.div>
 
