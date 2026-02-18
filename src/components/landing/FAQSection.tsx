@@ -39,7 +39,7 @@ const faqs = [
 
 export const FAQSection = () => {
   return (
-    <section className="relative py-24 px-4">
+    <section id="faq" aria-label="Domande frequenti sulla firma elettronica" className="relative py-24 px-4">
       <div className="container mx-auto max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
